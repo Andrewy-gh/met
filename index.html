@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link
+  
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+  /> -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1 class="flow container">Search the Met Collection</h1>
+
+  <form class="flow container">
+    <input id="input" type="text" name="" value=""></input>
+    <input type="submit" value="Search"></input>
+  </form>
+
+  <!-- <div class="buttons">
+    <button id="prev"><i class="fas fa-arrow-left"></i></button>
+    <button id="next"><i class="fas fa-arrow-right"></i></button>
+  </div> -->
+
+  <div class="flow container">
+    <label for="departments">Choose a department:</label>
+    <select name="deparments" id="departments">
+      <option value="none">Search All</option>
+      <option value="american-decorative-arts">American Decorative Arts</option>
+      <option value="ancient-near-eastern-art">Ancient Near Eastern Art</option>
+      <option value="arms-and-armor">Arms and Armor</option>
+      <option value="arts-of-africa,-oceania,-and-the-americas">Arts of Africa, Oceania, and the Americas</option>
+      <option value="asian-art">Asian Art</option>
+      <option value="the-cloisters">The Cloisters</option>
+      <option value="the-costume-institute">The Costume Institute</option>
+      <option value="drawings-and-prints">Drawings and Prints</option>
+      <option value="egyptian-art">Egyptian Art</option>
+      <option value="european-paintings">European Paintings</option>
+      <option value="european-sculpture-and-decorative-arts">European Sculpture and Decorative Arts</option>
+      <option value="greek-and-roman-art">Greek and Roman Art</option>
+      <option value="islamic-art">Islamic Art</option>
+      <option value="the-robert-lehman-collection">The Robert Lehman Collection</option>
+      <option value="the-libraries">The Libraries</option>
+      <option value="medieval-art">Medieval Art</option>
+      <option value="musical-instruments">Musical Instruments</option>
+      <option value="photographs">Photographs</option>
+      <option value="modern-art">Modern Art</option>
+    </select>
+  </div>
+
+  <p id="results" class="flow container"></p>
+  
+  <div id="art-container" class="flex flow container">
+    <div class="slide current"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

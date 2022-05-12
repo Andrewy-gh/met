@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+body {
+  font-family: "Libre Baskerville", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+#input {
+  width: 50vw;
+  padding: 1em;
+  border-radius: 50px;
+}
+
+input {
+  height: 2rem;
+
+}
+
+img {
+  display: block;
+  margin-inline: auto;
+  padding: 0;
+  max-width: 100%;
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, .5rem);
+}
+
+.container {
+  width: min(90% 90rem);
+  padding: 1em;
+  margin-inline: auto;
+}
+
+.slide {
+  max-width: 25rem;
+  height: auto;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  place-items: center;
+}
