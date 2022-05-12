@@ -36,24 +36,40 @@ const input = document.querySelector('input')
 // const query = `q=${input.value}`
 
 let count = 0
-document.addEventListener('submit', (e) => {
+
+// Changed this below
+document.addEventListener('submit', async (e) => {
+  console.log('hello')
+  console.log(e.target.value)
   count = 0
   e.preventDefault()
   removeMySlides()
   let query = `q=${input.value}`
-  fetch(`${url}${query}`) 
-    .then(res => res.json())
-    .then(data => {
-      data.objectIDs.forEach(item => fetchDataFromID(item))
-    })
-    .catch(err => {
-      console.error(err);
-    })
-
-//   setTimeout(function(){
-//     document.querySelector('#results').textContent = `${count} total entries found`
-// }, 5000);
+  // fetch(`${url}${query}`) 
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     data.objectIDs.forEach(item => fetchDataFromID(item))
+  //   })
+  //   .catch(err => {
+  //     console.error(err);
+  //   })
+  const jsonPromise = await fetchData(`${url}${query}`)
+  jsonPromise.objectIDs.forEach(item => fetchDataFromID(item))
 })
+
+async function fetchData(url) {
+  try {
+    const response = await fetch(url)
+    if (!response.ok) {
+      throw new Error(`HTTP Error ${response.status}`)
+    }
+    const json = await response.json()
+    return json
+  }
+  catch (error) {
+    console.error(`Could not fetch: ${error}`)
+  }
+}  
 
 function fetchDataFromID(item) {
   const objectURL = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${item}`
