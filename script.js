@@ -46,14 +46,6 @@ document.addEventListener('submit', async (e) => {
   e.preventDefault();
   removeMySlides();
   let query = `q=${input.value}`;
-  // fetch(`${url}${query}`)
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     data.objectIDs.forEach(item => fetchDataFromID(item))
-  //   })
-  //   .catch(err => {
-  //     console.error(err);
-  //   })
   const jsonPromise = await fetchData(`${url}${query}`);
   jsonPromise.objectIDs.forEach((item) => fetchDataFromID(item));
 });
